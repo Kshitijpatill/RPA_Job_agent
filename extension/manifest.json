@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "AI Job Agent",
+  "version": "1.0.0",
+  "description": "Semi-manual AI job application assistant.",
+  "action": {
+    "default_popup": "index.html"
+  },
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["src/content.jsx"]
+    }
+  ]
+}
