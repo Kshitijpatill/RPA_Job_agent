@@ -6,6 +6,18 @@ import manifest from './manifest.json'
 export default defineConfig({
   plugins: [
     react(),
-    crx({ manifest }),
+    crx({ 
+      manifest,
+      contentScripts: {
+        injectCss: true,
+      }
+    }),
   ],
+  server: {
+    port: 5173,
+    strictPort: true,
+    hmr: {
+      port: 5173,
+    },
+  },
 })

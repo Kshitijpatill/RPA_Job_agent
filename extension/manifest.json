@@ -3,12 +3,19 @@
   "name": "AI Job Agent",
   "version": "1.0.0",
   "description": "Semi-manual AI job application assistant.",
-  "action": {
-    "default_popup": "index.html"
+  "action": {},
+  "options_page": "dashboard.html",
+  "background": {
+    "service_worker": "src/background.js",
+    "type": "module"
   },
   "permissions": [
     "activeTab",
     "storage"
+  ],
+  "host_permissions": [
+    "http://127.0.0.1/*",
+    "http://localhost/*"
   ],
   "content_scripts": [
     {
